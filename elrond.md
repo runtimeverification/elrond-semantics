@@ -353,7 +353,7 @@ module ELROND
                          | mkCall       ( Bytes, Bytes, Int, WasmString, List, Int, Int )
  // -------------------------------------------------------------------------------------
     rule <commands> callContract(FROM, TO, VALUE, FUNCNAME:String, ARGS, GASLIMIT, GASPRICE)
-                 => callContract(FROM, TO, VALUE, #unparseWasmString("\"" +String FUNCNAME +String "\""), ARGS, GASLIMIT, GASPRICE)
+                 => callContract(FROM, TO, VALUE, #token("\"" +String FUNCNAME +String "\"", "WasmStringToken"), ARGS, GASLIMIT, GASPRICE)
                     ...
          </commands>
       [priority(60)]
